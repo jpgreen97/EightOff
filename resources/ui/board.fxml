@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<BorderPane
+        xmlns="http://javafx.com/javafx/17"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="ui.BoardController"
+        style="-fx-background-color: linear-gradient(#c8f5d0, #a9e7ba);">
+
+    <!-- ==================== FUNDACIONES IZQUIERDA ==================== -->
+    <left>
+        <VBox fx:id="foundationsBox" spacing="12" alignment="TOP_CENTER">
+            <padding>
+                <Insets topRightBottomLeft="12"/>
+            </padding>
+
+            <Pane prefWidth="90" prefHeight="130"
+                  style="-fx-background-color: #fafafa; -fx-border-color: #777; -fx-border-radius: 6; -fx-background-radius: 6;"/>
+            <Pane prefWidth="90" prefHeight="130"
+                  style="-fx-background-color: #fafafa; -fx-border-color: #777; -fx-border-radius: 6; -fx-background-radius: 6;"/>
+            <Pane prefWidth="90" prefHeight="130"
+                  style="-fx-background-color: #fafafa; -fx-border-color: #777; -fx-border-radius: 6; -fx-background-radius: 6;"/>
+            <Pane prefWidth="90" prefHeight="130"
+                  style="-fx-background-color: #fafafa; -fx-border-color: #777; -fx-border-radius: 6; -fx-background-radius: 6;"/>
+        </VBox>
+    </left>
+
+    <!-- ==================== TABLERO CENTRAL ==================== -->
+    <center>
+        <GridPane fx:id="boardGrid" hgap="12" vgap="8">
+            <padding>
+                <Insets topRightBottomLeft="12"/>
+            </padding>
+        </GridPane>
+    </center>
+
+    <!-- ==================== BOTONES INFERIORES ==================== -->
+    <bottom>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <padding>
+                <Insets topRightBottomLeft="8"/>
+            </padding>
+
+            <Button text="Nuevo Juego" onAction="#onNuevoJuego"/>
+            <Button fx:id="undoButton" text="Deshacer" onAction="#onUndo"/>
+            <Button fx:id="hintButton" text="Pista" onAction="#onPista"/>
+        </HBox>
+    </bottom>
+</BorderPane>
